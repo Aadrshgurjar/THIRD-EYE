@@ -15,6 +15,8 @@ The full implementation and working demo will be available soon.
 - Flask
 - OpenCV
 - NumPyTHIRD_EYE/
+
+## project structure
 │
 ├── data/
 │ └── real_vs_fake/
