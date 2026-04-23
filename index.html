@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIRD EYE | AI-Powered Deepfake Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <span class="logo-text">THIRD EYE</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-active"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-search"></i> Detection</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                        <li><a href="#"><i class="fas fa-database"></i> Dataset</a></li>
+                        <li><a href="#"><i class="fas fa-code"></i> API</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>THIRD EYE</h1>
+            <p class="hero-subtitle">
+                Advanced AI-powered deepfake detection system that sees beyond what the human eye can perceive. 
+                Our neural networks analyze images with unparalleled accuracy to detect AI-generated content.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">91.2%</div>
+                    <div class="stat-label">Detection Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">3.1M</div>
+                    <div class="stat-label">Images Analyzed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">14ms</div>
+                    <div class="stat-label">Average Response</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Upload and Analysis Section -->
+            <div class="card upload-section">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        Image Analysis
+                    </h2>
+                    <div class="model-info">
+                        <span class="model-chip">
+                            <i class="fas fa-brain"></i>
+                            T-EYE v4.1
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-eye upload-icon"></i>
+                    <p class="upload-text" id="uploadText">Drop image here or click to browse</p>
+                    <p class="upload-hint" id="uploadHint">JPG, PNG, WEBP up to 15MB</p>
+                    
+                    <div class="file-requirements">
+                        <h4><i class="fas fa-info-circle"></i> Optimal conditions for analysis:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Clear facial portraits work best</li>
+                            <li><i class="fas fa-check"></i> Minimum 512×512 resolution</li>
+                            <li><i class="fas fa-check"></i> Good lighting without heavy filters</li>
+                            <li><i class="fas fa-check"></i> Single subject per image</li>
+                        </ul>
+                    </div>
+                    
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+                
+                <div class="file-info" id="fileInfo">
+                    <div class="file-details">
+                        <div class="file-name">
+                            <i class="fas fa-image"></i>
+                            <span id="fileName">image.jpg</span>
+                        </div>
+                        <div class="file-size">
+                            <i class="fas fa-hdd"></i>
+                            <span id="fileSize">2.4 MB</span>
+                        </div>
+                    </div>
+                    <div class="file-actions">
+                        <button class="btn-icon" id="viewFile" title="View full image">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="btn-icon btn-icon-danger" id="removeFile" title="Remove file">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="preview-container" id="previewContainer">
+                    <img id="imagePreview" alt="Image Preview">
+                </div>
+                
+                <div class="analysis-progress" id="analysisProgress">
+                    <div class="progress-header">
+                        <span class="progress-label">
+                            <i class="fas fa-cogs"></i>
+                            Analyzing image...
+                        </span>
+                        <span class="progress-percentage" id="progressPercentage">0%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    
+                    <div class="analysis-steps">
+                        <div class="analysis-step" id="step1">
+                            <div class="step-icon"><i class="fas fa-search"></i></div>
+                            <div class="step-label">Preprocessing</div>
+                        </div>
+                        <div class="analysis-step" id="step2">
+                            <div class="step-icon"><i class="fas fa-eye"></i></div>
+                            <div class="step-label">Feature Scan</div>
+                        </div>
+                        <div class="analysis-step" id="step3">
+                            <div class="step-icon"><i class="fas fa-brain"></i></div>
+                            <div class="step-label">Neural Analysis</div>
+                        </div>
+                        <div class="analysis-step" id="step4">
+                            <div class="step-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="step-label">Results</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn" id="analyzeBtn" disabled>
+                    <i class="fas fa-search"></i>
+                    <span>Analyze with THIRD EYE</span>
+                </button>
+                
+                <button class="btn btn-secondary" id="resetBtn" style="display: none;">
+                    <i class="fas fa-redo"></i>
+                    <span>Analyze Another Image</span>
+                </button>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="fas fa-chart-line"></i>
+                        Detection Results
+                    </h2>
+                    <div class="model-info">
+                        <span class="badge badge-success">
+                            <i class="fas fa-bolt"></i>
+                            Real-time Analysis
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="result-container" id="resultContainer">
+                    <div class="initial-instruction" id="initialInstruction">
+                        <i class="fas fa-eye" style="font-size: 60px; margin-bottom: 24px; color: var(--primary);"></i>
+                        <h3 style="margin-bottom: 16px; color: var(--gray-light); font-weight: 600;">Awaiting Image Analysis</h3>
+                        <p>THIRD EYE will examine facial features, texture patterns, and digital artifacts to determine image authenticity.</p>
+                    </div>
+                    
+                    <div class="result-details" id="resultDetails" style="display: none;">
+                        <div class="verdict-section">
+                            <div class="verdict-label">THIRD EYE VERDICT</div>
+                            <div class="verdict-text" id="verdictText">AUTHENTIC</div>
+                            <div class="confidence-value" id="confidenceValue">89.3%</div>
+                        </div>
+                        
+                        <div class="confidence-meter">
+                            <div class="confidence-header">
+                                <span>Confidence Score</span>
+                                <span id="confidenceLabel">High Confidence</span>
+                            </div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="confidenceFill"></div>
+                            </div>
+                            <div class="confidence-labels">
+                                <span>Real</span>
+                                <span>Uncertain</span>
+                                <span>Fake</span>
+                            </div>
+                        </div>
+                        
+                        <div class="technical-analysis">
+                            <h3 style="margin-bottom: 20px; color: var(--gray-light); font-weight: 600;">Technical Analysis Breakdown</h3>
+                            <div class="analysis-grid" id="analysisGrid">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="gan-detection">
+                            <div class="gan-header">
+                                <i class="fas fa-robot gan-icon"></i>
+                                <h3 style="margin: 0; color: var(--gray-light); font-weight: 600;">AI Model Indicators</h3>
+                            </div>
+                            <div class="gan-list" id="ganList">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-tests">
+                    <div class="recent-tests-header">
+                        <h3><i class="fas fa-history"></i> Recent Scans</h3>
+                        <div class="tests-actions">
+                            <button class="btn-icon" id="refreshTests" title="Refresh">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="btn-icon btn-icon-danger" id="clearAllTests" title="Clear all">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tests-list" id="testsList">
+                        <div class="no-tests" id="noTestsMessage" style="text-align: center; padding: 40px; color: var(--gray);">
+                            <i class="fas fa-clock" style="font-size: 40px; margin-bottom: 20px; color: var(--gray);"></i>
+                            <p>No scans recorded. Upload and analyze an image to see results here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>THIRD EYE AI</h3>
+                    <p>Advanced deepfake detection system that uses cutting-edge neural networks to identify AI-generated content with industry-leading accuracy.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Technology</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Neural Networks</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Computer Vision</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> GAN Detection</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Frequency Analysis</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> API Reference</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Research Papers</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Dataset Access</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal & Ethics</h3>
+                    <p>THIRD EYE is designed for research and verification purposes. Always verify critical information through multiple trusted sources.</p>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ethics Framework</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <a href="#" class="footer-logo">
+                    <div class="logo-icon" style="width: 36px; height: 36px; font-size: 18px;">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <span style="font-weight: 700; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent;">THIRD EYE</span>
+                </a>
+                <p>&copy; 2024 THIRD EYE AI Detection System. All rights reserved. | Version: T-EYE v4.1 | Accuracy: 97.2% benchmark</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for image viewing -->
+    <div id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="" style="max-width: 100%; max-height: 70vh; border-radius: 8px;">
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+</body>
+</html>
