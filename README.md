@@ -8,18 +8,7 @@
 
 ---
 
-## 📌 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [How It Works (Technical Parameters)](#how-it-works-technical-parameters)
-- [Project Structure](#project-structure)
-- [Setup & Installation](#setup--installation)
-- [Running the Application](#running-the-application)
-- [Usage Guide](#usage-guide)
-- [Future Improvements](#future-improvements)
-- [License](#license)
-
----
+## 📌 Table of Conte
 
 ## 📖 Overview
 
